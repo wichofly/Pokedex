@@ -29,7 +29,7 @@ const getPokemon = async (id) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`
   const res = await fetch(url)
   const data = await res.json()
-  createPokemonCard()
+  createPokemonCard(data)
   // console.log(data)
 }
 
@@ -37,9 +37,13 @@ const createPokemonCard = (pokemon) => {
   const pokemonEl = document.createElement('div')
   pokemonEl.classList.add('pokemon')
 
+  // the number from img are 001, 002 and so on.
+  // The code below helps to place 3 digits number.
+  const id = pokemon.id.toString().padStart(3, '0')
+
   const pokemonInnerHTML = `
   <div class="img-container">
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png" alt="">
   </div>
   <div class="info">
     <span class="number">#001</span>
