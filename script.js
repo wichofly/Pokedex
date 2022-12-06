@@ -1,5 +1,5 @@
 const poke_container = document.getElementById('poke-container')
-const pokemon_count = 150
+const pokemon_count = 151
 const colors = {
   fire: '#FDDFDF',
   grass: '#DEFDE0',
@@ -40,14 +40,15 @@ const createPokemonCard = (pokemon) => {
   // the number from img are 001, 002 and so on.
   // The code below helps to place 3 digits number.
   const id = pokemon.id.toString().padStart(3, '0')
+  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
   const pokemonInnerHTML = `
   <div class="img-container">
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png" alt="">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png" alt="${name}">
   </div>
   <div class="info">
-    <span class="number">#001</span>
-    <h3 class="name">Bulbasur</h3>
+    <span class="number">#${id}</span>
+    <h3 class="name">${name}</h3>
     <small class="type">Type: <span>grass</span></small>
   </div>
   `
