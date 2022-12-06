@@ -50,3 +50,20 @@ h1 {
   max-width: 90%;
   margin-top: 20px;
 }
+
+.pokemon .info {
+  margin-top: 20px;
+}
+
+.pokemon .info .number {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* whatever the container fontsize is, is multiplied by 0.8. it will make the text smaller */
+  font-size: 0.8em;
+}
+
+.pokemon .info .name {
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}
