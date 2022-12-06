@@ -24,11 +24,33 @@ const fetchPokemons = async () => {
   }
 }
 
+// Async Fetching 
 const getPokemon = async (id) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`
   const res = await fetch(url)
   const data = await res.json()
-  console.log(data)
+  createPokemonCard()
+  // console.log(data)
+}
+
+const createPokemonCard = (pokemon) => {
+  const pokemonEl = document.createElement('div')
+  pokemonEl.classList.add('pokemon')
+
+  const pokemonInnerHTML = `
+  <div class="img-container">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
+  </div>
+  <div class="info">
+    <span class="number">#001</span>
+    <h3 class="name">Bulbasur</h3>
+    <small class="type">Type: <span>grass</span></small>
+  </div>
+  `
+
+  pokemonEl.innerHTML = pokemonInnerHTML
+
+  poke_container.appendChild(pokemonEl)
 }
 
 fetchPokemons()
