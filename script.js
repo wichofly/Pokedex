@@ -54,6 +54,10 @@ const createPokemonCard = (pokemon) => {
   // Find the types that match with the main_types(number of list of types) and the name to show it in the pokemon card.
   const type = main_types.find(type => poke_types.indexOf(type) > -1)
   // console.log(type)
+
+  const color = colors[type]
+
+  pokemonEl.style.backgroundColor = color
   
   const pokemonInnerHTML = `
   <div class="img-container">
