@@ -48,7 +48,7 @@ const createPokemonCard = (pokemon) => {
   // First letter uppercase
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
-  // map we loop through and for each type i want to return the type object (types are objects in this case) to get the type name.
+  // map: we loop through and for each type, i want to return the type object (types are objects in this case) to get the type name.
   // "console.log(pokemon.type)" 
   const poke_types = pokemon.types.map(type => type.type.name)
   // Find the types that match with the main_types(number of list of types) and the name to show it in the pokemon card.
@@ -58,7 +58,7 @@ const createPokemonCard = (pokemon) => {
   const color = colors[type]
 
   pokemonEl.style.backgroundColor = color
-  
+
   const pokemonInnerHTML = `
   <div class="img-container">
     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png" alt="${name}">
