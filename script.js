@@ -17,7 +17,8 @@ const colors = {
   normal: '#F5F5F5'
 }
 
-// Getting the colors key as a values to get 0: "fire", 1: "grass" and so on... works to get numbers indexes.
+// Getting the colors key as a values to get [0: "fire", 1: "grass"] and so on... works to get numbers indexes.
+// Creating a new array with number index
 const main_types = Object.keys(colors)
 // console.log(main_types)
 
@@ -48,10 +49,11 @@ const createPokemonCard = (pokemon) => {
   // First letter uppercase
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
-  // map: we loop through and for each type, i want to return the type object (types are objects in this case) to get the type name.
+  // map to create a new array just with types: we loop through and for each type, i want to return the type object (types are objects in this case) to get the type name.
   // "console.log(pokemon.type)" 
   const poke_types = pokemon.types.map(type => type.type.name)
   // Find the types that match with the main_types(number of list of types) and the name to show it in the pokemon card.
+  // console.log(poke_types)
   const type = main_types.find(type => poke_types.indexOf(type) > -1)
   // console.log(type)
 
