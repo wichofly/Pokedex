@@ -67,3 +67,7 @@ h1 {
   margin: 15px 0 7px;
   letter-spacing: 1px;
 }
+
+.info .type {
+  text-transform: capitalize; 
+}

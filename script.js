@@ -49,7 +49,7 @@ const createPokemonCard = (pokemon) => {
   // First letter uppercase
   const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
 
-  // map to create a new array just with types: we loop through and for each type, i want to return the type object to get the type name.
+  // map to create a new array just with types: we loop through and for each type, i want to return the type object to get the type names.
   // "console.log(pokemon.type)" 
   const poke_types = pokemon.types.map(type => type.type.name)
 
